@@ -8,7 +8,7 @@ document.getElementById('login-btn').addEventListener('click', () =>{
     if(username == "admin"){
         if(password == "admin123"){
             window.alert("Login Successfull");
-            window.location.assign("home.html");
+            window.location.href("home.html");
         }
         else{
              window.alert("Wrong Password");
