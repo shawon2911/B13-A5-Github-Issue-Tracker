@@ -19,13 +19,13 @@
     
     <!-- navbar start -->
      <header>
-        <div class="bg-white py-4 px-20 flex justify-between items-center shadow-sm">
+        <div class="bg-white py-4 px-20 md:flex md:justify-between md:items-center shadow-sm">
             <div class="navbar-logo flex justify-center items-center space-x-1">
                 <img class="w-8" src="assets/github-logo.png" alt="">
-                <h3 class="font-semibold text-[24px] text-[#1F2937]">GitHub Issues Tracker</h3>
+                <h3 class="font-semibold text-[18px] md:text-[24px] text-[#1F2937]">GitHub Issues Tracker</h3>
             </div>
 
-            <div class="navbar-search-bar">
+            <div class="navbar-search-bar my-5">
                 <div class="join">
                     <div>
                         <label class="input validator join-item outline-none">
@@ -46,8 +46,8 @@
     <!-- main part -->
         <main>
             <!-- 3 tabs -->
-         <section class="bg-white shadow-sm rounded-md max-w-9/12 mx-auto mt-15 py-5 px-6">
-            <div class="buttons space-x-2">
+         <section class="bg-white shadow-sm rounded-md md:max-w-9/12 mx-auto mt-8 md:mt-15 py-5 px-6">
+            <div class="buttons space-x-2  ">
                 <button onclick="toggleStyle('all-btn')"  id="all-btn" class="btn btn-primary">All</button>
                 <button onclick="toggleStyle('open-btn')" id="open-btn" class="btn text-[#64748B]">Open</button>
                 <button onclick="toggleStyle('close-btn')" id="close-btn" class="btn text-[#64748B] ">Closed</button>
@@ -56,8 +56,8 @@
         <!-- 3 tabs -->
 
         <!-- issues count -->
-         <section class="bg-white shadow-md  rounded-t-md max-w-9/12 mx-auto mt-5 py-5 px-6">
-            <div class="flex justify-between items-center">
+         <section class="bg-white shadow-md  rounded-t-md  md:max-w-9/12 mx-auto mt-5 py-5 px-6">
+            <div class="md:flex md:justify-between md:items-center">
                 <div class="flex  items-center space-x-2">
                     <img src="assets/Aperture.png" alt="">
                     <div>
@@ -65,8 +65,8 @@
                         <p class="text-[#64748B]">Track and manage your project issues</p>
                     </div>
                 </div>
-                <div>
-                    <div class="flex items-center space-x-2">
+                <div >
+                    <div class="flex items-center space-x-2 mt-5 ml-3">
                         <div class="rounded-full bg-green-500 w-3 h-3"></div>
                         <p class="font-medium text-[#1F2937]">Open</p>
 
@@ -92,14 +92,14 @@
 
 
         <!-- card container -->
-         <section id="card-container" class="bg-base-200 shadow-sm  max-w-9/12 mx-auto  py-5 px-6 grid grid-cols-4 gap-5">
+         <section id="card-container" class="bg-base-200 shadow-sm  md:max-w-9/12 mx-auto  py-5 px-6 grid grid-cols-1 md:grid-cols-4 gap-5">
             
              
          </section>
         <!-- card container -->
 
         <!-- open card container -->
-         <section id="open-card-container" class="bg-base-200 shadow-sm  max-w-9/12 mx-auto  py-5 px-6 grid grid-cols-4 gap-5 hidden">
+         <section id="open-card-container" class="bg-base-200 shadow-sm  md:max-w-9/12 mx-auto  py-5 px-6 grid grid-cols-1 md:grid-cols-4 gap-5 hidden">
             
              
          </section>
@@ -107,7 +107,7 @@
 
         
         <!-- closed card container  -->
-         <section id="closed-card-container" class="bg-base-200 shadow-sm  max-w-9/12 mx-auto  py-5 px-6 grid grid-cols-4 gap-5 hidden">
+         <section id="closed-card-container" class="bg-base-200 shadow-sm  md:max-w-9/12 mx-auto  py-5 px-6 grid grid-cols-1 md:grid-cols-4 gap-5 hidden">
             
              
          </section>
