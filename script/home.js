@@ -86,7 +86,7 @@ const displayCardDetails = (item) => {
             
                         <h3 class="font-bold text-xl  text-[#1F2937]">${item.title}</h3>
                         <div class="mt-3 mb-7 space-x-3">
-                            ${item.status === "open" ? `<span class="text-white font-medium text-[12px] bg-green-500 py-1 px-3 rounded-full">Opened</span>` : `<span class="text-white font-medium text-[12px] bg-red-200 py-1 px-3 rounded-full">Closed</span>` }
+                            ${item.status === "open" ? `<span class="text-white font-medium text-[12px] bg-green-500 py-1 px-3 rounded-full">Opened</span>` : `<span class="text-white font-medium text-[12px] bg-red-400 py-1 px-3 rounded-full">Closed</span>` }
                             <span class="text-[12px] text-[#64748B]">.</span>
                             <span class="text-[12px] text-[#64748B]">Opened by ${item.assignee}</span>
                             <span class="text-[12px] text-[#64748B]">.</span>
@@ -200,7 +200,7 @@ const displayCards = (items) => {
         }
         const openCard = document.createElement('div');
         openCard.innerHTML = `
-             ${item.status === "open" ? `<div class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-green-500">` : `<div class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-purple-500">`}
+             ${item.status === "open" ? `<div onclick="loadCardDetails(${item.id})" class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-green-500">` : `<div onclick="loadCardDetails(${item.id})" class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-purple-500">`}
                 <div class="flex justify-between items-center">
                     ${item.status === "open" ? `<img src="assets/Open-Status.png" alt="">` : `<img src="assets/Closed- Status .png" alt="">` }
                     <div  class="rounded-full h-6 w-20 flex justify-center items-center font-medium text-[12px] ${priorityBg} ${priorityColor} ">${item.priority}</div>
@@ -254,7 +254,7 @@ const displayCards = (items) => {
         }
         const closedCard = document.createElement('div');
         closedCard.innerHTML = `
-             ${item.status === "open" ? `<div class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-green-500">` : `<div class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-purple-500">`}
+             ${item.status === "open" ? `<div onclick="loadCardDetails(${item.id})" class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-green-500">` : `<div onclick="loadCardDetails(${item.id})" class="bg-white shadow-lg rounded-md py-4 px-4 space-y-4 border-t-7 border-purple-500">`}
                 <div class="flex justify-between items-center">
                     ${item.status === "open" ? `<img src="assets/Open-Status.png" alt="">` : `<img src="assets/Closed- Status .png" alt="">` }
                     <div  class="rounded-full h-6 w-20 flex justify-center items-center font-medium text-[12px] ${priorityBg} ${priorityColor} ">${item.priority}</div>
