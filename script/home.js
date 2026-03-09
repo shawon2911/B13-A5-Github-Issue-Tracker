@@ -9,6 +9,24 @@ const closedCardContainer = document.getElementById('closed-card-container');
 const allBtn = document.getElementById('all-btn');
 const openBtn = document.getElementById('open-btn');
 const closeBtn = document.getElementById('close-btn');
+
+// manage the work of spinner
+const manageSpinner = (status) =>{
+    if(status == true){
+        document.getElementById('spinner').classList.remove('hidden');
+        cardContainer.classList.add('hidden');
+        openCardContainer.classList.add('hidden');
+        closedCardContainer.classList.add('hidden');
+    }
+    else{
+        cardContainer.classList.remove('hidden');
+        openCardContainer.classList.remove('hidden');
+        closedCardContainer.classList.remove('hidden');
+        document.getElementById('spinner').classList.add('hidden');
+    }
+}
+
+
 // creating function for change tabs
 const toggleStyle = (id) => {
     allBtn.classList.remove('btn-primary');
@@ -48,10 +66,14 @@ const toggleStyle = (id) => {
 
 // fetch all cards
 const loadCards = () => {
+    manageSpinner(true);
     const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
     fetch(url)
         .then(res => res.json())
-        .then(data => displayCards(data.data));
+        .then(data => {
+            displayCards(data.data);
+            manageSpinner(false);
+        });
 };
 
 
@@ -125,6 +147,7 @@ const displayCardDetails = (item) => {
 
 
 const displayCards = (items) => {
+    
     const openCards = items.filter(item => item.status === "open");
     const closedCards = items.filter(item => item.status === "closed");
     cardContainer.innerHTML = "";
@@ -283,6 +306,7 @@ const displayCards = (items) => {
         `
         
         closedCardContainer.appendChild(closedCard);
+       
     });
 
 
@@ -303,6 +327,7 @@ loadCards();
 
 
 document.getElementById('btn-search').addEventListener('click', () => {
+    manageSpinner(true);
     const input = document.getElementById("input-search");
     const searchValue = input.value.trim().toLowerCase();
     // console.log(searchValue);
@@ -311,7 +336,9 @@ document.getElementById('btn-search').addEventListener('click', () => {
         .then(res => res.json())
         .then(data => {
             displayCards(data.data);
+            manageSpinner(false);
         });
+        
 });
 
 
