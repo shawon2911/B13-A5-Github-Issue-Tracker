@@ -14,14 +14,8 @@ const closeBtn = document.getElementById('close-btn');
 const manageSpinner = (status) =>{
     if(status == true){
         document.getElementById('spinner').classList.remove('hidden');
-        cardContainer.classList.add('hidden');
-        openCardContainer.classList.add('hidden');
-        closedCardContainer.classList.add('hidden');
     }
     else{
-        cardContainer.classList.remove('hidden');
-        openCardContainer.classList.remove('hidden');
-        closedCardContainer.classList.remove('hidden');
         document.getElementById('spinner').classList.add('hidden');
     }
 }
